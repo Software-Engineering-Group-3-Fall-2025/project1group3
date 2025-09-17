@@ -1,69 +1,61 @@
+
 body {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+   
+    
 }
 .box-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    width: 100vw;
-    font-family: Tahoma, serif;
-    font-size: 40px;
-
-}
-
-.box-content {
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 100px;
+    justify-content: center;   /* keep them grouped in the middle */
+    gap: 15px;
+}   
+/* Base styling for .box (same as .box-content) */
+.box { 
+    flex: 0 0 100px;
     width: 100px;
-    border-top-style: solid;
-    border-top-color: #687291;
+    border-top: 2px solid #687291;
     text-align: center;
-}
-
-.box-a {
+    line-height: 100px;
+    box-sizing: border-box;
+    
+  }
+  
+  /* First box (A) */
+  .box:nth-child(1) {
     background: linear-gradient(#000105, #ffffff);
-}
-
-.box-b {
-    transition: width 2s, height 2s, background-color 2s, transform 2s;
+  }
+  
+  /* Second box (B) */
+  .box:nth-child(2) {
+    transition: width .6s, height .6s, background-color .6s, transform .6s;
     background-color: #eeeff2;
-    font-family: Tangerine, serif;
-
-}
-
-.box-b:hover {
+    font-family: 'Tangerine', serif;
+  }
+  .box:nth-child(2):hover {
     background-color: #ffcccc;
-    rotate: 180deg;
-}
-
-.box-c {
-    animation-duration: 1s;
-    animation-name: rotate;
-    animation-iteration-count: infinite;
-    box-shadow: 5px -5px 5px 0px rgb(9, 0, 128);
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.box-d {
+    transform: rotate(180deg) scale(1.1);
+  }
+  
+  /* Third box (C) */
+  .box:nth-child(3) {
+    animation: rotate 3s linear infinite;
+    box-shadow: 5px -5px 10px rgba(9, 0, 128, 0.6);
+    background: #f8f8ff;
+  }
+  
+  /* Fourth box (D) */
+  .box:nth-child(4) {
     background-color: #eeeff2;
-    font-family: Tangerine, serif;
-    font-size: 40px;
-}
-
-.box-e {
+    font-family: 'Tangerine', serif;
+  }
+  
+  /* Fifth box (E) */
+  .box:nth-child(5) {
     background-color: #dfe1e7;
     box-shadow: 5px -5px 5px 0px rgb(128, 0, 0);
 }
