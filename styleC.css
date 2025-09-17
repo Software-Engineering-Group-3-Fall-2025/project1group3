@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
     display: flex;
@@ -51,7 +52,7 @@ body {
   /* Fourth box (D) */
   .box:nth-child(4) {
     background-color: #eeeff2;
-    font-family: 'Tangerine', serif;
+    font-family:  "Dancing Script", cursive;
   }
   
   /* Fifth box (E) */
@@ -80,3 +81,33 @@ body {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
   }
+  
+.box-container .box:nth-of-type(2):hover {
+  background-color: #ffcccc;
+  transform: none; /* cancel any earlier box-level rotate */
+}
+
+
+.box-container .box:nth-of-type(2) {
+  position: relative;
+  color: transparent;       /* hide the built-in text */
+}
+
+.box-container .box:nth-of-type(2)::before {
+  content: "B";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .6s;
+  color: #000;              /* make the pseudo-letter visible */
+  font: inherit;            /* keep your Tangerine/etc. */
+  line-height: 100px;       /* match your box height if needed */
+}
+
+
+.box-container .box:nth-of-type(2):hover::before {
+  transform: rotate(180deg);   /* 2D upside-down, not flip */
+  
+}
