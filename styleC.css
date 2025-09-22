@@ -1,113 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-   
-    
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
 }
 .box-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;   /* keep them grouped in the middle */
-    gap: 15px;
-}   
-/* Base styling for .box (same as .box-content) */
-.box { 
-    flex: 0 0 100px;
-    width: 100px;
-    border-top: 2px solid #687291;
-    text-align: center;
-    line-height: 100px;
-    box-sizing: border-box;
-    
-  }
-  
-  /* First box (A) */
-  .box:nth-child(1) {
-    background: linear-gradient(#000105, #ffffff);
-  }
-  
-  /* Second box (B) */
-  .box:nth-child(2) {
-    transition: width .6s, height .6s, background-color .6s, transform .6s;
-    background-color: #eeeff2;
-    font-family: 'Tangerine', serif;
-  }
-  .box:nth-child(2):hover {
-    background-color: #ffcccc;
-    transform: rotate(180deg) scale(1.1);
-  }
- 
-  /* Third box (C) */
-  .box:nth-child(3) {
-    animation: rotate 3s linear infinite;
-    box-shadow: 5px -5px 10px rgba(9, 0, 128, 0.6);
-    background: #f8f8ff;
-  }
-  
-  /* Fourth box (D) */
-  .box:nth-child(4) {
-    background-color: #eeeff2;
-    font-family:  "Dancing Script", cursive;
-  }
-  
-  /* Fifth box (E) */
-  .box:nth-child(5) {
-    background-color: #dfe1e7;
-    box-shadow: 5px -5px 5px 0px rgb(128, 0, 0);
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+  font-family: Tahoma, serif;
+  font-size: 40px;
 
-.box-f {
-    display: none;
 }
 
 .box-content {
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    border-top: 1px solid #687291;
-    font-family: Tahoma, sans-serif;
-    font-size: 40px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100px;
+  width: 100px;
+  border-top-style: solid;
+  border-top-color: #687291;
+  text-align: center;
 }
 
-.box-a, .box-c, .box-e {
-    background-color: #dfe1e7;
+.box-a {
+  background: linear-gradient(#dfe1e7, #ffffff);
 }
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-  }
-  
-.box-container .box:nth-of-type(2):hover {
+
+.box-b {
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
+  background-color: #eeeff2;
+}
+
+.box-b:hover {
   background-color: #ffcccc;
-  transform: none; /* cancel any earlier box-level rotate */
+  rotate: 180deg;
 }
 
-
-.box-container .box:nth-of-type(2) {
-  position: relative;
-  color: transparent;       /* hide the built-in text */
+.box-c {
+  animation-duration: 1s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
 }
 
-.box-container .box:nth-of-type(2)::before {
-  content: "B";
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform .6s;
-  color: #000;              /* make the pseudo-letter visible */
-  font: inherit;            /* keep your Tangerine/etc. */
-  line-height: 100px;       /* match your box height if needed */
+@keyframes rotate {
+  0% {
+      transform: rotate(0);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
 }
 
+.box-d {
+  background-color: #eeeff2;
+  font-family: Tangerine, serif;
+  font-size: 40px;
+}
 
-.box-container .box:nth-of-type(2):hover::before {
-  transform: rotate(180deg);   /* 2D upside-down, not flip */
-  
+.box-e {
+  background-color: #dfe1e7;
+  box-shadow: 5px -5px 5px 0px teal;
+}
+
+.box-f {
+  display: none;
 }
